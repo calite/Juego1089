@@ -5,16 +5,16 @@ public class MiniJuego {
     private static Scanner sc;
     
 	private static int invertirNumero(int numero){
-	    	
+	    	//invierte el numero recogido en el scanner
 	        int cifra, inverso = 0;
 	        
-	        while(numero!=0){
+	        while(numero != 0){
 	        	
-	            cifra = numero%10;
+	            cifra = numero % 10;
 	            
 	            inverso = (inverso * 10) + cifra;
 	            
-	            numero/=10;
+	            numero /= 10;
 	        }
 	        return inverso;
 	    }
@@ -35,9 +35,9 @@ public class MiniJuego {
         
         if (num1 < 999) {
         	//Aqui hacemos el juego
-        	int num2 = invertirNumero(num1);
-        	
-        	int resta = num2 - num1;
+        	int num2 = invertirNumero(Math.abs(num1));
+        	//math.abs cambia el valor negativo por positivo.
+        	int resta = Math.abs(num2 - num1);
         	
         	int num3 = invertirNumero(resta);
         	
@@ -56,7 +56,7 @@ public class MiniJuego {
         }
         else {
         	
-        	System.out.print("El numero tiene que ser de 3 cifras.");
+        	System.out.print("El numero tiene que ser de 3 cifras!");
         	
         }
         
