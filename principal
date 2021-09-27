@@ -1,0 +1,65 @@
+import java.util.Scanner;
+ 
+public class MiniJuego {
+ 
+    private static Scanner sc;
+    
+	private static int invertirNumero(int numero){
+	    	
+	        int cifra, inverso = 0;
+	        
+	        while(numero!=0){
+	        	
+	            cifra = numero%10;
+	            
+	            inverso = (inverso * 10) + cifra;
+	            
+	            numero/=10;
+	        }
+	        return inverso;
+	    }
+    
+    public static void main(String[] args) {
+        
+    	System.out.print("La magia del numero 1089!\n");
+    	
+    	int num1;
+    	
+        sc = new Scanner(System.in);
+        
+        System.out.print("Introduce un número de 3 cifras: ");
+        
+        num1 = sc.nextInt();
+        
+        sc.close();
+        
+        if (num1 < 999) {
+        	//Aqui hacemos el juego
+        	int num2 = invertirNumero(num1);
+        	
+        	int resta = num2 - num1;
+        	
+        	int num3 = invertirNumero(resta);
+        	
+        	System.out.println("Si le damos la vuelta a " + num1 + " el resultado es: " + num2);
+        	
+        	System.out.println("Vamos a restar " + num2 +" a " + num1 + " como resultado obtenemos: " + (resta));
+        	
+        	System.out.println("Inviertimos " + resta +" que es igual a: " + num3 );
+        	
+        	System.out.println("y por ultimo sumamos ambos resultados: "+ num3 + " + " + resta);
+        	
+        	System.out.println("El resultado final es: " +(num3 + resta));
+        	
+        	System.out.println("Da igual que numero elijas, siempre saldra 1089!");
+        	     	
+        }
+        else {
+        	
+        	System.out.print("El numero tiene que ser de 3 cifras.");
+        	
+        }
+        
+    }
+    
+}
